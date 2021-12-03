@@ -5,9 +5,9 @@ class Phrase
 
   def word_count
     words = @text.split(" ")
-    words.reduce({}) { |hash, word|
-        hash[word] = 1
-        hash
-      }
+    words.reduce(Hash.new(0)) { |hash, word|
+      hash[word] += 1
+      hash
+    }
   end
 end
